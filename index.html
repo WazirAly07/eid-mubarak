@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>✨ Animated Gipphy Card | For Friends & Family ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none; /* makes it feel more like a gif/app, but text can still be selected if needed */
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #1a2a3a 0%, #0e1a24 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', 'Poppins', 'Quicksand', system-ui, -apple-system, 'Comic Neue', cursive;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        /* main card container - glowing vibe */
+        .gipphy-card {
+            max-width: 560px;
+            width: 100%;
+            background: rgba(255, 248, 225, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 72px 72px 80px 80px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(255, 215, 150, 0.5), 0 0 0 12px #f7b05e;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            overflow: hidden;
+            animation: float-card 3s infinite ease-in-out;
+        }
+
+        @keyframes float-card {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* inner content */
+        .gipphy-inner {
+            padding: 14px 24px 16px;
+            text-align: center;
+        }
+
+        /* === GIPPHY ANIMATED ZONE (like a living sticker) === */
+        .gipphy-animation {
+            background: #ffe9cf;
+            border-radius: 58px;
+            padding: 20px 12px 18px;
+            margin-bottom: 24px;
+            box-shadow: inset 0 2px 6px rgba(97, 52, 14, 0.1), 0 12px 18px -8px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+            width: 500px;
+            height: 400px;
+        }
+
+        .animation-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* character + emoji parade */
+        .dance-crew {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 8px 0;
+        }
+
+        .creature {
+            font-size: 4rem;
+            display: inline-block;
+            filter: drop-shadow(2px 6px 12px rgba(0,0,0,0.2));
+            animation: bounceWave 1.2s infinite alternate;
+            transition: transform 0.1s;
+        }
+
+        /* different delays for group rhythm */
+        .creature:nth-child(1) { animation-delay: 0s; }
+        .creature:nth-child(2) { animation-delay: 0.2s; }
+        .creature:nth-child(3) { animation-delay: 0.4s; }
+        .creature:nth-child(4) { animation-delay: 0.1s; }
+        .creature:nth-child(5) { animation-delay: 0.3s; }
+
+        @keyframes bounceWave {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-20px) rotate(8deg); }
+        }
+
+        /* glowing text + rainbow pulse */
+        .glow-text {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FF6A3D, #FF4081, #9C27B0, #3F51B5);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientShift 3s ease infinite, textPop 1s infinite alternate;
+            display: inline-block;
+            margin: 12px 0 4px;
+            letter-spacing: -0.5px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textPop {
+            0% { text-shadow: 0 0 2px #ffd966; transform: scale(1);}
+            100% { text-shadow: 0 0 12px #ffb347; transform: scale(1.02);}
+        }
+
+        /* blinking starfield effect */
+        .star-burst {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 12px 0 5px;
+        }
+
+        .star {
+            font-size: 1.7rem;
+            animation: twinkle 0.9s infinite alternate;
+            opacity: 0.6;
+        }
+        .star:nth-child(2) { animation-delay: 0.3s; font-size: 2rem; }
+        .star:nth-child(3) { animation-delay: 0.6s; }
+        .star:nth-child(4) { animation-delay: 0.2s; }
+        .star:nth-child(5) { animation-delay: 0.7s; }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8);}
+            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 8px gold;}
+        }
+
+        /* personalized message */
+        .message-box {
+            background: #fff5e6;
+            border-radius: 48px;
+            padding: 18px 16px;
+            margin: 1px 0 1px;
+            border: 2px dashed #f7b05e;
+            transition: all 0.2s;
+        }
+
+        .message-box p {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #3b2a1f;
+            line-height: 1.4;
+        }
+
+        .heartbeat {
+            color: #e63946;
+            font-size: 1.9rem;
+            display: inline-block;
+            animation: heartbeat 1.1s infinite;
+            margin: 0 4px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1);}
+            25% { transform: scale(1.25);}
+            35% { transform: scale(1.1);}
+            50% { transform: scale(1.3);}
+        }
+
+        /* floating buttons or interactive toggles */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 22px 0 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: #f5cda0;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #3b2a1f;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #a2572c;
+            transition: 0.08s linear;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #a2572c;
+        }
+
+        .btn-special {
+            background: #ff8c69;
+            color: white;
+            box-shadow: 0 4px 0 #b3411a;
+        }
+
+        /* confetti canvas (hidden until triggered) */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* message area for live love */
+        .dynamic-note {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            background: #f3e1c0;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 60px;
+            color: #5e3a1f;
+            font-weight: 500;
+        }
+
+        footer {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 22px;
+            color: #7f6142;
+        }
+
+        @media (max-width: 480px) {
+            .creature { font-size: 2.8rem; }
+            .glow-text { font-size: 1.7rem; }
+            .message-box p { font-size: 1.1rem; }
+            .gipphy-card { border-radius: 56px; }
+        }
+
+        /* toggle extra animation effect */
+        .spin-special {
+            animation: spinZoom 0.5s ease forwards;
+        }
+
+        @keyframes spinZoom {
+            0% { transform: rotate(0deg) scale(1);}
+            50% { transform: rotate(12deg) scale(1.1);}
+            100% { transform: rotate(0deg) scale(1);}
+        }
+    </style>
+</head>
+<body>
+
+<div class="gipphy-card" id="gipphyCard">
+    <div class="gipphy-inner">
+        <!-- ANIMATED GIPPHY ZONE : joyful creatures + moving effects -->
+        
+            <div class="animation-stage">
+               <img src="eid.gif" alt="" class="gipphy-animation"> 
+           
+        </div>
+
+        <!-- Heartfelt message for friends and family -->
+        <div class="message-box">
+            <p>
+                <strong style="color:#d45a2b;">Eid Mubarak</strong> 
+                <span class="heartbeat">🌙✨</span><br>
+                May this beautiful occasion of Eid bring <span style="background:linear-gradient(45deg, rgb(57, 21, 25), rgb(255, 0, 43)); -webkit-background-clip:text; background-clip:text; color:transparent;"> happiness, peace, and endless blessings</span>!
+                <br> to you and your family. May Allah accept all your prayers, fasting, and good deeds during Ramadan.<br>
+                <span style="background:linear-gradient(45deg, rgb(188, 47, 37), rgb(63, 20, 27)); -webkit-background-clip:text; background-clip:text; color:transparent;"> Enjoy this special day with joy, love, and togetherness.</span>
+                <span class="heartbeat">🤍</span><br>
+            </p>
+        </div>
+
+        <!-- Interactive controls to change mood / add more love -->
+        <div class="action-buttons">
+            <button class="btn" id="extraSparkleBtn">🎇 EXTRA SPARKLE</button>
+            <button class="btn btn-special" id="loveBombBtn">💘 LOVE EXPLOSION</button>
+        </div>
+
+        <div class="dynamic-note" id="dynamicMessage">
+            💬 click any button → more magic!
+        </div>
+        <footer>
+            ✨ endless animated gipphy — tap & feel the joy ✨
+        </footer>
+    </div>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script>
+    (function() {
+        // ---------- CONFETTI ENGINE (light & fun) ----------
+        const canvas = document.getElementById('confetti-canvas');
+        let ctx = canvas.getContext('2d');
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let particles = [];
+        let animationFrame = null;
+        let confettiActive = false;
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            if(confettiActive) drawConfettiLoop();
+        });
+
+        class ConfettiParticle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height - height * 0.2;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * 5 + 3;
+                this.speedX = (Math.random() - 0.5) * 2.5;
+                this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+                this.rotation = Math.random() * 360;
+                this.rotSpeed = (Math.random() - 0.5) * 8;
+                this.decay = 0;
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotSpeed;
+                if (this.y > height + 50 || this.x < -50 || this.x > width + 50) {
+                    return false;
+                }
+                return true;
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function startConfetti(duration = 1800) {
+            if (animationFrame) cancelAnimationFrame(animationFrame);
+            confettiActive = true;
+            particles = [];
+            for(let i=0; i<120; i++) {
+                particles.push(new ConfettiParticle());
+            }
+            function drawLoop() {
+                if(!confettiActive && particles.length === 0) return;
+                if(!ctx) return;
+                ctx.clearRect(0, 0, width, height);
+                let keepAlive = false;
+                for(let i=0; i<particles.length; i++) {
+                    const alive = particles[i].update();
+                    particles[i].draw();
+                    if(alive) keepAlive = true;
+                }
+                particles = particles.filter(p => p.update());
+                if(keepAlive || particles.length > 0) {
+                    animationFrame = requestAnimationFrame(drawLoop);
+                } else {
+                    confettiActive = false;
+                    cancelAnimationFrame(animationFrame);
+                    animationFrame = null;
+                    ctx.clearRect(0, 0, width, height);
+                }
+            }
+            drawLoop();
+            setTimeout(() => {
+                if(particles.length > 0) {
+                    // gradual stop: let particles naturally die, but we don't add more.
+                    // just set flag that no more injection needed, but existing continue until end.
+                    // (confettiActive not fully kills, but stops new bursts)
+                }
+            }, duration);
+            // additional guarantee to clear after 2.5 seconds total 
+            setTimeout(() => {
+                if(particles.length > 0 && !confettiActive) {
+                    // if particles left but no longer active, we cancel after clear
+                    for(let i=0;i<particles.length;i++) particles = [];
+                    if(animationFrame) cancelAnimationFrame(animationFrame);
+                    ctx.clearRect(0, 0, width, height);
+                }
+            }, duration+800);
+        }
+
+        // Enhanced quick confetti burst with extra love
+        function burstLoveConfetti() {
+            startConfetti(1500);
+            // also add a playful card shake
+            const card = document.getElementById('gipphyCard');
+            card.style.transform = 'scale(1.02)';
+            setTimeout(() => { card.style.transform = ''; }, 200);
+            // update dynamic message
+            const msgDiv = document.getElementById('dynamicMessage');
+            msgDiv.innerHTML = '💖💖 LOVE EXPLOSION! You are the best! 💖💖';
+            setTimeout(() => {
+                if(msgDiv.innerHTML.includes('LOVE EXPLOSION')) 
+                    msgDiv.innerHTML = '🌈 spreading happiness — forever gipphy family! 🌈';
+            }, 1800);
+        }
+
+        // extra sparkle: change creature colors effect + flash + star rain
+        function extraSparkleEffect() {
+            // 1. flash animation on gipphy animation zone
+            const zone = document.querySelector('.gipphy-animation');
+            zone.style.transition = '0.1s';
+            zone.style.backgroundColor = '#fff0d8';
+            zone.style.boxShadow = '0 0 0 3px gold, 0 0 0 8px #ffbc6e';
+            setTimeout(() => {
+                zone.style.backgroundColor = '#ffe9cf';
+                zone.style.boxShadow = 'inset 0 2px 6px rgba(97, 52, 14, 0.1), 0 12px 18px -8px rgba(0,0,0,0.2)';
+            }, 300);
+            
+            // 2. make all creatures do a spin class temporarily
+            const creatures = document.querySelectorAll('.creature');
+            creatures.forEach(cre => {
+                cre.style.animation = 'none';
+                cre.offsetHeight; // reflow
+                cre.style.animation = 'bounceWave 0.5s infinite alternate, spinZoom 0.4s ease';
+                setTimeout(() => {
+                    cre.style.animation = 'bounceWave 1.2s infinite alternate';
+                }, 500);
+            });
+            // 3. add tiny random stars floating (via message)
+            const msgDiv = document.getElementById('dynamicMessage');
+            msgDiv.innerHTML = '✨🎉 SPARKLE MODE ON! You shine brighter than stars 🎉✨';
+            // also add few confetti particles but not overkill
+            startConfetti(900);
+            // extra emoji rain effect (just for fun: create floating span, removed quickly)
+            for(let i=0;i<12;i++) {
+                const starSpan = document.createElement('div');
+                starSpan.innerText = ['✨','⭐','🌟','💫','⚡','🌸'][Math.floor(Math.random()*6)];
+                starSpan.style.position = 'fixed';
+                starSpan.style.left = Math.random() * window.innerWidth + 'px';
+                starSpan.style.top = '-20px';
+                starSpan.style.fontSize = (Math.random() * 28 + 18) + 'px';
+                starSpan.style.pointerEvents = 'none';
+                starSpan.style.zIndex = '1000';
+                starSpan.style.opacity = '0.9';
+                starSpan.style.transition = 'transform 1.2s linear, opacity 1s';
+                document.body.appendChild(starSpan);
+                let fall = 0;
+                const interval = setInterval(() => {
+                    if(!starSpan.parentNode) return clearInterval(interval);
+                    let currentTop = parseFloat(starSpan.style.top);
+                    if(currentTop > window.innerHeight + 50) {
+                        starSpan.remove();
+                        clearInterval(interval);
+                    } else {
+                        starSpan.style.top = (currentTop + 5) + 'px';
+                        starSpan.style.transform = `rotate(${Math.random() * 30}deg)`;
+                    }
+                }, 35);
+                setTimeout(() => {
+                    if(starSpan.parentNode) starSpan.remove();
+                    clearInterval(interval);
+                }, 2800);
+            }
+            setTimeout(() => {
+                if(msgDiv.innerHTML.includes('SPARKLE MODE'))
+                    msgDiv.innerHTML = '💕 infinite smiles for family & friends 💕';
+            }, 2200);
+        }
+
+        // attach interactive events
+        const sparkleBtn = document.getElementById('extraSparkleBtn');
+        const loveBtn = document.getElementById('loveBombBtn');
+        
+        sparkleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            extraSparkleEffect();
+            // also wiggle card
+            const cardDiv = document.getElementById('gipphyCard');
+            cardDiv.classList.add('spin-special');
+            setTimeout(() => cardDiv.classList.remove('spin-special'), 500);
+        });
+        
+        loveBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            burstLoveConfetti();
+            // also change heart in message to big animated pulse
+            const heartSpan = document.querySelector('.heartbeat');
+            if(heartSpan) {
+                heartSpan.style.transform = 'scale(1.8)';
+                setTimeout(() => { heartSpan.style.transform = ''; }, 400);
+            }
+            const msgBox = document.querySelector('.message-box p');
+            const originalMsg = msgBox.innerHTML;
+            msgBox.style.transition = '0.2s';
+            msgBox.style.backgroundColor = '#fff2e1';
+            setTimeout(() => { msgBox.style.backgroundColor = ''; }, 300);
+            // add a sweet temporary overlay effect
+            const tempNote = document.getElementById('dynamicMessage');
+            tempNote.innerHTML = '💞💞 YOU ARE SO LOVED! FAMILY FOREVER 💞💞';
+            setTimeout(() => {
+                if(tempNote.innerHTML.includes('LOVED')) 
+                    tempNote.innerHTML = '🎁 every moment with you is a gipphy treasure 🎁';
+            }, 2000);
+        });
+        
+        // extra fun: double-click card triggers sparkle too
+        const cardContainer = document.getElementById('gipphyCard');
+        cardContainer.addEventListener('dblclick', () => {
+            extraSparkleEffect();
+            startConfetti(1000);
+            const dynMsg = document.getElementById('dynamicMessage');
+            dynMsg.innerHTML = '🌸✨ DOUBLE TAP LOVE! FAMILY & FRIENDS ROCK! ✨🌸';
+            setTimeout(() => {
+                if(dynMsg.innerHTML.includes('DOUBLE TAP'))
+                    dynMsg.innerHTML = '🎈 keep dancing, keep smiling 🎈';
+            }, 2000);
+        });
+        
+        // also hover effect on card to show playful border
+        cardContainer.addEventListener('mouseenter', () => {
+            cardContainer.style.boxShadow = '0 30px 50px rgba(0,0,0,0.3), 0 0 0 8px #ffd966, 0 0 0 14px #f7b05e';
+        });
+        cardContainer.addEventListener('mouseleave', () => {
+            cardContainer.style.boxShadow = '0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(255, 215, 150, 0.5), 0 0 0 12px #f7b05e';
+        });
+        
+        // resize canvas on load
+        resizeCanvas();
+        
+        // initial message rotation: cycle message after 4 sec just for fun
+        let msgIndex = 0;
+        const funMessages = [
+            "💬 click any button → more magic!",
+            "🐣 you + me = best gipphy crew 🐣",
+            "🎵 endless happy dancing animals 🎵",
+            "🍬 share this joy with loved ones 🍬"
+        ];
+        setInterval(() => {
+            const msgDivDynamic = document.getElementById('dynamicMessage');
+            if(msgDivDynamic && !msgDivDynamic.innerHTML.includes('LOVE') && !msgDivDynamic.innerHTML.includes('SPARKLE') && !msgDivDynamic.innerHTML.includes('DOUBLE')) {
+                msgIndex = (msgIndex + 1) % funMessages.length;
+                msgDivDynamic.innerHTML = funMessages[msgIndex];
+            } else {
+                // if a special effect message is present, don't override immediately, but after 3 sec of any effect it might reset
+                if(msgDivDynamic.innerHTML.includes('LOVE') || msgDivDynamic.innerHTML.includes('SPARKLE') || msgDivDynamic.innerHTML.includes('DOUBLE')) {
+                    setTimeout(() => {
+                        if(msgDivDynamic.innerHTML.includes('LOVE') || msgDivDynamic.innerHTML.includes('SPARKLE')) {
+                            // but only reset if it's been a while (we use a soft reset after effect timers)
+                        }
+                    }, 2000);
+                }
+            }
+        }, 4800);
+        
+        // make it responsive: extra css friendliness
+        console.log("✨ Gipphy ready! spread love to friends & family ✨");
+    })();
+</script>
+</body>
+</html>
