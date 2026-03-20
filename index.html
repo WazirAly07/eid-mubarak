@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -47,15 +48,23 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
             animation: float-card 3s infinite ease-in-out;
+            text-align: center;
         }
-        
+
         .gipphy-card::-webkit-scrollbar {
             display: none;
         }
 
         @keyframes float-card {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
         .gipphy-inner {
@@ -69,19 +78,16 @@
             border-radius: 35px;
             padding: 12px 12px 14px;
             margin-bottom: 14px;
-            box-shadow: inset 0 1px 5px rgba(97, 52, 14, 0.08), 0 10px 20px -8px rgba(0,0,0,0.2);
+            box-shadow: inset 0 1px 5px rgba(97, 52, 14, 0.08), 0 10px 20px -8px rgba(0, 0, 0, 0.2);
             transition: all 0.2s;
             width: 100%;
             height: auto;
-        }
-
-        .animation-stage {
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
+
+
 
         /* Image styling - perfect for mobile */
         .eid-img {
@@ -89,14 +95,14 @@
             max-width: 280px;
             height: auto;
             border-radius: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             background: #f9e5c1;
             cursor: pointer;
             transition: transform 0.2s;
             display: block;
             margin: 0 auto;
         }
-        
+
         .eid-img:active {
             transform: scale(0.98);
         }
@@ -113,14 +119,23 @@
             font-size: 1.5rem;
             animation: swing 2.2s infinite ease-in-out;
             display: inline-block;
-            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
         }
 
-        .lantern:nth-child(2) { animation-delay: 0.4s; }
+        .lantern:nth-child(2) {
+            animation-delay: 0.4s;
+        }
 
         @keyframes swing {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(8deg) translateY(-2px); }
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(8deg) translateY(-2px);
+            }
         }
 
         /* Stars row */
@@ -135,12 +150,28 @@
             font-size: 1.2rem;
             animation: twinkleGold 0.9s infinite alternate;
         }
-        .star:nth-child(2) { animation-delay: 0.2s; font-size: 1.4rem; }
-        .star:nth-child(3) { animation-delay: 0.5s; }
+
+        .star:nth-child(2) {
+            animation-delay: 0.2s;
+            font-size: 1.4rem;
+        }
+
+        .star:nth-child(3) {
+            animation-delay: 0.5s;
+        }
 
         @keyframes twinkleGold {
-            0% { opacity: 0.5; transform: scale(0.8); text-shadow: none; }
-            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 6px gold; }
+            0% {
+                opacity: 0.5;
+                transform: scale(0.8);
+                text-shadow: none;
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.2);
+                text-shadow: 0 0 6px gold;
+            }
         }
 
         /* Glowing text */
@@ -159,8 +190,15 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         /* Message box - compact */
@@ -170,7 +208,8 @@
             padding: 12px 14px;
             margin: 12px 0;
             border: 2px solid #f7c56e;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
         }
 
         .message-box p {
@@ -189,9 +228,19 @@
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            30% { transform: scale(1.2); }
-            50% { transform: scale(1.15); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
         }
 
         /* Buttons - mobile friendly */
@@ -265,9 +314,17 @@
         }
 
         @keyframes spinZoom {
-            0% { transform: rotate(0deg) scale(1); }
-            40% { transform: rotate(5deg) scale(1.02); }
-            100% { transform: rotate(0deg) scale(1); }
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            40% {
+                transform: rotate(5deg) scale(1.02);
+            }
+
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
         }
 
         /* Small screen adjustments */
@@ -275,22 +332,28 @@
             .gipphy-inner {
                 padding: 10px 12px 14px;
             }
+
             .message-box p {
                 font-size: 0.78rem;
             }
+
             .glow-text {
                 font-size: 1.2rem;
             }
+
             .btn {
                 padding: 7px 16px;
                 font-size: 0.72rem;
             }
+
             .eid-img {
                 max-width: 240px;
             }
+
             .lantern {
                 font-size: 1.2rem;
             }
+
             .star {
                 font-size: 1rem;
             }
@@ -300,46 +363,42 @@
             .message-box p {
                 font-size: 0.72rem;
             }
+
             .btn {
                 padding: 6px 14px;
                 font-size: 0.68rem;
             }
+
             .eid-img {
                 max-width: 200px;
             }
+
             .gipphy-card {
                 border-radius: 35px;
             }
         }
     </style>
 </head>
+
 <body>
 
-<div class="gipphy-card" id="gipphyCard">
-    <div class="gipphy-inner">
-        <!-- EID ANIMATED ZONE with beautiful illustration -->
-        <div class="gipphy-animation">
-            <div class="animation-stage">
+    <div class="gipphy-card" id="gipphyCard">
+        <div class="gipphy-inner">
+            <!-- EID ANIMATED ZONE with beautiful illustration -->
             
-                <img class="eid-img" id="eidMainImage" 
-                     src="eid.gif"
-                     alt="Eid Mubarak">
-                
-                
-                
-                <div>
-                    <span class="glow-text">✨ EID MUBARAK ✨</span>
-                </div>
-            </div>
+
+                <img class="eid-img" id="eidMainImage" src="eid.gif" alt="Eid Mubarak">
         </div>
 
         <!-- Heartfelt Eid message -->
         <div class="message-box">
             <p>
                 <strong style="color:#d45a2b; font-size: 1rem;">🌙 Eid Mubarak! 🌙</strong><br>
-                May this blessed occasion bring <span style="background:linear-gradient(45deg, #e67e22, #f1c40f); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:bold;">happiness, peace, and endless blessings</span> to you and your family.<br>
+                May this blessed occasion bring <span
+                    style="background:linear-gradient(45deg, #ef2727, #f3cb04); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:bold;">happiness,
+                    peace, and endless blessings</span> to you and your family.<br>
                 ✨ May Allah accept all your prayers and good deeds ✨<br>
-                <span style="color:#b85c1a;">💚 Enjoy this special day with joy & love 💚</span>
+                <span style="background:linear-gradient(45deg, #ef2727, #0c0606); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:bold;">💚 Enjoy this special day with joy & love 💚</span>
                 <span class="heartbeat">🌙</span>
             </p>
         </div>
@@ -353,263 +412,264 @@
         <div class="dynamic-note" id="dynamicMessage">
             💫 Tap for festive magic!
         </div>
-        <footer>
+        <footer style="margin-bottom: 10px; color: #c46b1a;">
             ✨ Ap ka Apna Khass Ali ✨
         </footer>
     </div>
-</div>
+    </div>
 
-<canvas id="confetti-canvas"></canvas>
+    <canvas id="confetti-canvas"></canvas>
 
-<script>
-    (function() {
-        // Mobile-optimized confetti
-        const canvas = document.getElementById('confetti-canvas');
-        let ctx = canvas.getContext('2d');
-        let width = window.innerWidth;
-        let height = window.innerHeight;
-        let particles = [];
-        let animationFrame = null;
-        let confettiActive = false;
+    <script>
+        (function () {
+            // Mobile-optimized confetti
+            const canvas = document.getElementById('confetti-canvas');
+            let ctx = canvas.getContext('2d');
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            let particles = [];
+            let animationFrame = null;
+            let confettiActive = false;
 
-        function resizeCanvas() {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-        }
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-        });
-
-        class ConfettiParticle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height - height * 0.2;
-                this.size = Math.random() * 6 + 3;
-                this.speedY = Math.random() * 4 + 2.5;
-                this.speedX = (Math.random() - 0.5) * 2;
-                const colors = ['#F4D03F', '#F7DC6F', '#E67E22', '#D35400', '#2ECC71', '#F39C12', '#FF6B6B'];
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-                this.rotation = Math.random() * 360;
-                this.rotSpeed = (Math.random() - 0.5) * 7;
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
             }
-            update() {
-                this.y += this.speedY;
-                this.x += this.speedX;
-                this.rotation += this.rotSpeed;
-                if (this.y > height + 50 || this.x < -50 || this.x > width + 50) {
-                    return false;
-                }
-                return true;
-            }
-            draw() {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.rotation * Math.PI / 180);
-                ctx.fillStyle = this.color;
-                ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
-                ctx.restore();
-            }
-        }
-
-        function startConfetti(duration = 1300) {
-            if (animationFrame) cancelAnimationFrame(animationFrame);
-            confettiActive = true;
-            particles = [];
-            let count = Math.min(80, Math.floor(width / 6) + 40);
-            for(let i=0; i<count; i++) {
-                particles.push(new ConfettiParticle());
-            }
-            function drawLoop() {
-                if(!confettiActive && particles.length === 0) return;
-                if(!ctx) return;
-                ctx.clearRect(0, 0, width, height);
-                let keepAlive = false;
-                for(let i=0; i<particles.length; i++) {
-                    const alive = particles[i].update();
-                    particles[i].draw();
-                    if(alive) keepAlive = true;
-                }
-                particles = particles.filter(p => p.update());
-                if(keepAlive || particles.length > 0) {
-                    animationFrame = requestAnimationFrame(drawLoop);
-                } else {
-                    confettiActive = false;
-                    cancelAnimationFrame(animationFrame);
-                    animationFrame = null;
-                    ctx.clearRect(0, 0, width, height);
-                }
-            }
-            drawLoop();
-            setTimeout(() => {
-                if(particles.length > 0) {}
-            }, duration);
-            setTimeout(() => {
-                if(particles.length > 0 && !confettiActive) {
-                    particles = [];
-                    if(animationFrame) cancelAnimationFrame(animationFrame);
-                    ctx.clearRect(0, 0, width, height);
-                }
-            }, duration+500);
-        }
-
-        // Blessings burst
-        function burstBlessings() {
-            startConfetti(1400);
-            const card = document.getElementById('gipphyCard');
-            card.style.transform = 'scale(1.01)';
-            setTimeout(() => { card.style.transform = ''; }, 150);
-            const msgDiv = document.getElementById('dynamicMessage');
-            msgDiv.innerHTML = '🌙✨ EID BLESSINGS! May joy be with you! ✨🌙';
-            const img = document.getElementById('eidMainImage');
-            img.style.filter = 'drop-shadow(0 0 10px gold)';
-            setTimeout(() => { img.style.filter = ''; }, 600);
-            setTimeout(() => {
-                if(msgDiv.innerHTML.includes('BLESSINGS')) 
-                    msgDiv.innerHTML = '🌸 Taqabbalallahu minna wa minkum! 🌸';
-            }, 2000);
-        }
-
-        // Sparkle effect
-        function extraSparkleEffect() {
-            const zone = document.querySelector('.gipphy-animation');
-            zone.style.transition = '0.12s';
-            zone.style.backgroundColor = '#fff3e0';
-            zone.style.boxShadow = '0 0 0 3px #ffdd99, 0 0 0 8px #f5bc70';
-            setTimeout(() => {
-                zone.style.backgroundColor = '#fef5e6';
-                zone.style.boxShadow = 'inset 0 1px 5px rgba(97, 52, 14, 0.08), 0 10px 20px -8px rgba(0,0,0,0.2)';
-            }, 280);
-            
-            const stars = document.querySelectorAll('.star');
-            stars.forEach(star => {
-                star.style.animation = 'none';
-                star.offsetHeight;
-                star.style.animation = 'twinkleGold 0.4s infinite alternate';
-                setTimeout(() => {
-                    star.style.animation = 'twinkleGold 0.9s infinite alternate';
-                }, 500);
+            window.addEventListener('resize', () => {
+                resizeCanvas();
             });
-            
-            const msgDiv = document.getElementById('dynamicMessage');
-            msgDiv.innerHTML = '✨🎉 SPARKLING EID MAGIC! 🎉✨';
-            startConfetti(800);
-            
-            // Light falling stars
-            for(let i=0;i<12;i++) {
-                const starSpan = document.createElement('div');
-                starSpan.innerText = ['✨','⭐','🌟','🌙','💫'][Math.floor(Math.random()*5)];
-                starSpan.style.position = 'fixed';
-                starSpan.style.left = Math.random() * window.innerWidth + 'px';
-                starSpan.style.top = '-25px';
-                starSpan.style.fontSize = (Math.random() * 18 + 12) + 'px';
-                starSpan.style.pointerEvents = 'none';
-                starSpan.style.zIndex = '1000';
-                starSpan.style.opacity = '0.85';
-                document.body.appendChild(starSpan);
-                const interval = setInterval(() => {
-                    if(!starSpan.parentNode) return clearInterval(interval);
-                    let currentTop = parseFloat(starSpan.style.top);
-                    if(currentTop > window.innerHeight + 40) {
-                        starSpan.remove();
-                        clearInterval(interval);
-                    } else {
-                        starSpan.style.top = (currentTop + 4.5) + 'px';
+
+            class ConfettiParticle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height - height * 0.2;
+                    this.size = Math.random() * 6 + 3;
+                    this.speedY = Math.random() * 4 + 2.5;
+                    this.speedX = (Math.random() - 0.5) * 2;
+                    const colors = ['#F4D03F', '#F7DC6F', '#E67E22', '#D35400', '#2ECC71', '#F39C12', '#FF6B6B'];
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.rotation = Math.random() * 360;
+                    this.rotSpeed = (Math.random() - 0.5) * 7;
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    this.rotation += this.rotSpeed;
+                    if (this.y > height + 50 || this.x < -50 || this.x > width + 50) {
+                        return false;
                     }
-                }, 35);
+                    return true;
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rotation * Math.PI / 180);
+                    ctx.fillStyle = this.color;
+                    ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                    ctx.restore();
+                }
+            }
+
+            function startConfetti(duration = 1300) {
+                if (animationFrame) cancelAnimationFrame(animationFrame);
+                confettiActive = true;
+                particles = [];
+                let count = Math.min(80, Math.floor(width / 6) + 40);
+                for (let i = 0; i < count; i++) {
+                    particles.push(new ConfettiParticle());
+                }
+                function drawLoop() {
+                    if (!confettiActive && particles.length === 0) return;
+                    if (!ctx) return;
+                    ctx.clearRect(0, 0, width, height);
+                    let keepAlive = false;
+                    for (let i = 0; i < particles.length; i++) {
+                        const alive = particles[i].update();
+                        particles[i].draw();
+                        if (alive) keepAlive = true;
+                    }
+                    particles = particles.filter(p => p.update());
+                    if (keepAlive || particles.length > 0) {
+                        animationFrame = requestAnimationFrame(drawLoop);
+                    } else {
+                        confettiActive = false;
+                        cancelAnimationFrame(animationFrame);
+                        animationFrame = null;
+                        ctx.clearRect(0, 0, width, height);
+                    }
+                }
+                drawLoop();
                 setTimeout(() => {
-                    if(starSpan.parentNode) starSpan.remove();
-                    clearInterval(interval);
+                    if (particles.length > 0) { }
+                }, duration);
+                setTimeout(() => {
+                    if (particles.length > 0 && !confettiActive) {
+                        particles = [];
+                        if (animationFrame) cancelAnimationFrame(animationFrame);
+                        ctx.clearRect(0, 0, width, height);
+                    }
+                }, duration + 500);
+            }
+
+            // Blessings burst
+            function burstBlessings() {
+                startConfetti(1400);
+                const card = document.getElementById('gipphyCard');
+                card.style.transform = 'scale(1.01)';
+                setTimeout(() => { card.style.transform = ''; }, 150);
+                const msgDiv = document.getElementById('dynamicMessage');
+                msgDiv.innerHTML = '🌙✨ EID BLESSINGS! May joy be with you! ✨🌙';
+                const img = document.getElementById('eidMainImage');
+                img.style.filter = 'drop-shadow(0 0 10px gold)';
+                setTimeout(() => { img.style.filter = ''; }, 600);
+                setTimeout(() => {
+                    if (msgDiv.innerHTML.includes('BLESSINGS'))
+                        msgDiv.innerHTML = '🌸 Taqabbalallahu minna wa minkum! 🌸';
                 }, 2000);
             }
-            setTimeout(() => {
-                if(msgDiv.innerHTML.includes('SPARKLING'))
-                    msgDiv.innerHTML = '🕌 May your Eid be bright & joyful 🕌';
-            }, 2000);
-        }
 
-        // Button events
-        const sparkleBtn = document.getElementById('extraSparkleBtn');
-        const loveBtn = document.getElementById('loveBombBtn');
-        
-        sparkleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            extraSparkleEffect();
-            const cardDiv = document.getElementById('gipphyCard');
-            cardDiv.classList.add('spin-special');
-            setTimeout(() => cardDiv.classList.remove('spin-special'), 400);
-        });
-        
-        loveBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            burstBlessings();
-            const heartSpan = document.querySelector('.heartbeat');
-            if(heartSpan) {
-                heartSpan.style.transform = 'scale(1.5)';
-                setTimeout(() => { heartSpan.style.transform = ''; }, 350);
+            // Sparkle effect
+            function extraSparkleEffect() {
+                const zone = document.querySelector('.gipphy-animation');
+                zone.style.transition = '0.12s';
+                zone.style.backgroundColor = '#fff3e0';
+                zone.style.boxShadow = '0 0 0 3px #ffdd99, 0 0 0 8px #f5bc70';
+                setTimeout(() => {
+                    zone.style.backgroundColor = '#fef5e6';
+                    zone.style.boxShadow = 'inset 0 1px 5px rgba(97, 52, 14, 0.08), 0 10px 20px -8px rgba(0,0,0,0.2)';
+                }, 280);
+
+                const stars = document.querySelectorAll('.star');
+                stars.forEach(star => {
+                    star.style.animation = 'none';
+                    star.offsetHeight;
+                    star.style.animation = 'twinkleGold 0.4s infinite alternate';
+                    setTimeout(() => {
+                        star.style.animation = 'twinkleGold 0.9s infinite alternate';
+                    }, 500);
+                });
+
+                const msgDiv = document.getElementById('dynamicMessage');
+                msgDiv.innerHTML = '✨🎉 SPARKLING EID MAGIC! 🎉✨';
+                startConfetti(800);
+
+                // Light falling stars
+                for (let i = 0; i < 12; i++) {
+                    const starSpan = document.createElement('div');
+                    starSpan.innerText = ['✨', '⭐', '🌟', '🌙', '💫'][Math.floor(Math.random() * 5)];
+                    starSpan.style.position = 'fixed';
+                    starSpan.style.left = Math.random() * window.innerWidth + 'px';
+                    starSpan.style.top = '-25px';
+                    starSpan.style.fontSize = (Math.random() * 18 + 12) + 'px';
+                    starSpan.style.pointerEvents = 'none';
+                    starSpan.style.zIndex = '1000';
+                    starSpan.style.opacity = '0.85';
+                    document.body.appendChild(starSpan);
+                    const interval = setInterval(() => {
+                        if (!starSpan.parentNode) return clearInterval(interval);
+                        let currentTop = parseFloat(starSpan.style.top);
+                        if (currentTop > window.innerHeight + 40) {
+                            starSpan.remove();
+                            clearInterval(interval);
+                        } else {
+                            starSpan.style.top = (currentTop + 4.5) + 'px';
+                        }
+                    }, 35);
+                    setTimeout(() => {
+                        if (starSpan.parentNode) starSpan.remove();
+                        clearInterval(interval);
+                    }, 2000);
+                }
+                setTimeout(() => {
+                    if (msgDiv.innerHTML.includes('SPARKLING'))
+                        msgDiv.innerHTML = '🕌 May your Eid be bright & joyful 🕌';
+                }, 2000);
             }
-            const tempNote = document.getElementById('dynamicMessage');
-            tempNote.innerHTML = '💚💛 EID MUBARAK! Love & peace to all! 💛💚';
-            setTimeout(() => {
-                if(tempNote.innerHTML.includes('MUBARAK')) 
-                    tempNote.innerHTML = '🎁 Celebrate with loved ones! 🎁';
-            }, 2000);
-        });
-        
-        // Double tap on card
-        const cardContainer = document.getElementById('gipphyCard');
-        cardContainer.addEventListener('dblclick', () => {
-            extraSparkleEffect();
-            startConfetti(900);
-            const dynMsg = document.getElementById('dynamicMessage');
-            dynMsg.innerHTML = '🌙✨ DOUBLE TAP! EID MUBARAK! ✨🌙';
-            setTimeout(() => {
-                if(dynMsg.innerHTML.includes('DOUBLE TAP'))
-                    dynMsg.innerHTML = '🎈 Share love & joy today! 🎈';
-            }, 1800);
-        });
-        
-        // Touch-friendly effects
-        cardContainer.addEventListener('touchstart', () => {
-            cardContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.35), 0 0 0 5px #ffde9e, 0 0 0 10px #f5bc70';
-        });
-        cardContainer.addEventListener('touchend', () => {
-            cardContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3), 0 0 0 5px #f9d56e, 0 0 0 10px #e8b86b';
-        });
-        
-        // Image click sparkle
-        const eidImg = document.getElementById('eidMainImage');
-        eidImg.addEventListener('click', (e) => {
-            e.stopPropagation();
-            startConfetti(500);
-            const dynMsg = document.getElementById('dynamicMessage');
-            dynMsg.innerHTML = '🏮🌙 Eid blessing to you! 🌙🏮';
-            setTimeout(() => {
-                if(dynMsg.innerHTML.includes('blessing')) dynMsg.innerHTML = '💝 Enjoy your special day! 💝';
-            }, 1200);
-        });
-        
-        resizeCanvas();
-        
-        // Rotating messages
-        let msgIndex = 0;
-        const mobileMessages = [
-            "💫 Tap for festive magic!",
-            "🌙✨ Eid Mubarak! ✨🌙",
-            "🕌 Share love & joy 🕌",
-            "⭐ Blessed celebration ⭐"
-        ];
-        setInterval(() => {
-            const msgDivDynamic = document.getElementById('dynamicMessage');
-            if(msgDivDynamic && !msgDivDynamic.innerHTML.includes('BLESSINGS') && !msgDivDynamic.innerHTML.includes('SPARKLING') && !msgDivDynamic.innerHTML.includes('DOUBLE TAP') && !msgDivDynamic.innerHTML.includes('MUBARAK')) {
-                msgIndex = (msgIndex + 1) % mobileMessages.length;
-                msgDivDynamic.innerHTML = mobileMessages[msgIndex];
-            }
-        }, 4500);
-        
-        console.log("✨ Eid Mobile Card Ready! Share with family ✨");
-    })();
-</script>
+
+            // Button events
+            const sparkleBtn = document.getElementById('extraSparkleBtn');
+            const loveBtn = document.getElementById('loveBombBtn');
+
+            sparkleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                extraSparkleEffect();
+                const cardDiv = document.getElementById('gipphyCard');
+                cardDiv.classList.add('spin-special');
+                setTimeout(() => cardDiv.classList.remove('spin-special'), 400);
+            });
+
+            loveBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                burstBlessings();
+                const heartSpan = document.querySelector('.heartbeat');
+                if (heartSpan) {
+                    heartSpan.style.transform = 'scale(1.5)';
+                    setTimeout(() => { heartSpan.style.transform = ''; }, 350);
+                }
+                const tempNote = document.getElementById('dynamicMessage');
+                tempNote.innerHTML = '💚💛 EID MUBARAK! Love & peace to all! 💛💚';
+                setTimeout(() => {
+                    if (tempNote.innerHTML.includes('MUBARAK'))
+                        tempNote.innerHTML = '🎁 Celebrate with loved ones! 🎁';
+                }, 2000);
+            });
+
+            // Double tap on card
+            const cardContainer = document.getElementById('gipphyCard');
+            cardContainer.addEventListener('dblclick', () => {
+                extraSparkleEffect();
+                startConfetti(900);
+                const dynMsg = document.getElementById('dynamicMessage');
+                dynMsg.innerHTML = '🌙✨ DOUBLE TAP! EID MUBARAK! ✨🌙';
+                setTimeout(() => {
+                    if (dynMsg.innerHTML.includes('DOUBLE TAP'))
+                        dynMsg.innerHTML = '🎈 Share love & joy today! 🎈';
+                }, 1800);
+            });
+
+            // Touch-friendly effects
+            cardContainer.addEventListener('touchstart', () => {
+                cardContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.35), 0 0 0 5px #ffde9e, 0 0 0 10px #f5bc70';
+            });
+            cardContainer.addEventListener('touchend', () => {
+                cardContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3), 0 0 0 5px #f9d56e, 0 0 0 10px #e8b86b';
+            });
+
+            // Image click sparkle
+            const eidImg = document.getElementById('eidMainImage');
+            eidImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                startConfetti(500);
+                const dynMsg = document.getElementById('dynamicMessage');
+                dynMsg.innerHTML = '🏮🌙 Eid blessing to you! 🌙🏮';
+                setTimeout(() => {
+                    if (dynMsg.innerHTML.includes('blessing')) dynMsg.innerHTML = '💝 Enjoy your special day! 💝';
+                }, 1200);
+            });
+
+            resizeCanvas();
+
+            // Rotating messages
+            let msgIndex = 0;
+            const mobileMessages = [
+                "💫 Tap for festive magic!",
+                "🌙✨ Eid Mubarak! ✨🌙",
+                "🕌 Share love & joy 🕌",
+                "⭐ Blessed celebration ⭐"
+            ];
+            setInterval(() => {
+                const msgDivDynamic = document.getElementById('dynamicMessage');
+                if (msgDivDynamic && !msgDivDynamic.innerHTML.includes('BLESSINGS') && !msgDivDynamic.innerHTML.includes('SPARKLING') && !msgDivDynamic.innerHTML.includes('DOUBLE TAP') && !msgDivDynamic.innerHTML.includes('MUBARAK')) {
+                    msgIndex = (msgIndex + 1) % mobileMessages.length;
+                    msgDivDynamic.innerHTML = mobileMessages[msgIndex];
+                }
+            }, 4500);
+
+            console.log("✨ Eid Mobile Card Ready! Share with family ✨");
+        })();
+    </script>
 </body>
+
 </html>
