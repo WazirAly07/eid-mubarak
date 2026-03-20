@@ -2,63 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>✨ Animated Gipphy Card | For Friends & Family ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>🌙 Eid Mubarak | Mobile Greeting Card</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            user-select: none; /* makes it feel more like a gif/app, but text can still be selected if needed */
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             min-height: 100vh;
-            background: linear-gradient(145deg, #1a2a3a 0%, #0e1a24 100%);
+            background: linear-gradient(145deg, #0a2f2a 0%, #0e2a2a 50%, #1a3f2a 100%);
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Segoe UI', 'Poppins', 'Quicksand', system-ui, -apple-system, 'Comic Neue', cursive;
-            padding: 0;
+            padding: 10px;
             margin: 0;
-            cursor: pointer;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
-        /* main card container - glowing vibe */
+        /* main card - perfectly sized for mobile */
         .gipphy-card {
-            max-width: 560px;
+            max-width: 420px;
             width: 100%;
-            background: rgba(255, 248, 225, 0.92);
-            backdrop-filter: blur(2px);
-            border-radius: 72px 72px 80px 80px;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(255, 215, 150, 0.5), 0 0 0 12px #f7b05e;
-            transition: transform 0.2s ease, box-shadow 0.2s;
-            overflow: hidden;
+            max-height: 98vh;
+            background: linear-gradient(135deg, rgba(255, 248, 225, 0.98) 0%, rgba(255, 240, 210, 0.98) 100%);
+            border-radius: 45px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 5px #f9d56e, 0 0 0 10px #e8b86b;
+            transition: transform 0.2s ease;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 10;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             animation: float-card 3s infinite ease-in-out;
+        }
+        
+        .gipphy-card::-webkit-scrollbar {
+            display: none;
         }
 
         @keyframes float-card {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
         }
 
-        /* inner content */
         .gipphy-inner {
-            padding: 14px 24px 16px;
+            padding: 14px 16px 18px;
             text-align: center;
         }
 
-        /* === GIPPHY ANIMATED ZONE (like a living sticker) === */
+        /* ANIMATED ZONE - compact & beautiful */
         .gipphy-animation {
-            background: #ffe9cf;
-            border-radius: 58px;
-            padding: 20px 12px 18px;
-            margin-bottom: 24px;
-            box-shadow: inset 0 2px 6px rgba(97, 52, 14, 0.1), 0 12px 18px -8px rgba(0,0,0,0.2);
+            background: linear-gradient(145deg, #fef5e6, #fff5e8);
+            border-radius: 35px;
+            padding: 12px 12px 14px;
+            margin-bottom: 14px;
+            box-shadow: inset 0 1px 5px rgba(97, 52, 14, 0.08), 0 10px 20px -8px rgba(0,0,0,0.2);
             transition: all 0.2s;
-            width: 500px;
-            height: 400px;
+            width: 100%;
+            height: auto;
         }
 
         .animation-stage {
@@ -66,157 +80,158 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
         }
 
-        /* character + emoji parade */
-        .dance-crew {
+        /* Image styling - perfect for mobile */
+        .eid-img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: #f9e5c1;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .eid-img:active {
+            transform: scale(0.98);
+        }
+
+        /* Lantern decorations */
+        .lanterns {
             display: flex;
-            gap: 18px;
             justify-content: center;
-            flex-wrap: wrap;
-            margin: 8px 0;
+            gap: 20px;
+            margin: 5px 0 3px;
         }
 
-        .creature {
-            font-size: 4rem;
+        .lantern {
+            font-size: 1.5rem;
+            animation: swing 2.2s infinite ease-in-out;
             display: inline-block;
-            filter: drop-shadow(2px 6px 12px rgba(0,0,0,0.2));
-            animation: bounceWave 1.2s infinite alternate;
-            transition: transform 0.1s;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
         }
 
-        /* different delays for group rhythm */
-        .creature:nth-child(1) { animation-delay: 0s; }
-        .creature:nth-child(2) { animation-delay: 0.2s; }
-        .creature:nth-child(3) { animation-delay: 0.4s; }
-        .creature:nth-child(4) { animation-delay: 0.1s; }
-        .creature:nth-child(5) { animation-delay: 0.3s; }
+        .lantern:nth-child(2) { animation-delay: 0.4s; }
 
-        @keyframes bounceWave {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(-20px) rotate(8deg); }
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(8deg) translateY(-2px); }
         }
 
-        /* glowing text + rainbow pulse */
-        .glow-text {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #FF6A3D, #FF4081, #9C27B0, #3F51B5);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradientShift 3s ease infinite, textPop 1s infinite alternate;
-            display: inline-block;
-            margin: 12px 0 4px;
-            letter-spacing: -0.5px;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes textPop {
-            0% { text-shadow: 0 0 2px #ffd966; transform: scale(1);}
-            100% { text-shadow: 0 0 12px #ffb347; transform: scale(1.02);}
-        }
-
-        /* blinking starfield effect */
+        /* Stars row */
         .star-burst {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin: 12px 0 5px;
+            margin: 5px 0;
         }
 
         .star {
-            font-size: 1.7rem;
-            animation: twinkle 0.9s infinite alternate;
-            opacity: 0.6;
+            font-size: 1.2rem;
+            animation: twinkleGold 0.9s infinite alternate;
         }
-        .star:nth-child(2) { animation-delay: 0.3s; font-size: 2rem; }
-        .star:nth-child(3) { animation-delay: 0.6s; }
-        .star:nth-child(4) { animation-delay: 0.2s; }
-        .star:nth-child(5) { animation-delay: 0.7s; }
+        .star:nth-child(2) { animation-delay: 0.2s; font-size: 1.4rem; }
+        .star:nth-child(3) { animation-delay: 0.5s; }
 
-        @keyframes twinkle {
-            0% { opacity: 0.2; transform: scale(0.8);}
-            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 8px gold;}
+        @keyframes twinkleGold {
+            0% { opacity: 0.5; transform: scale(0.8); text-shadow: none; }
+            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 6px gold; }
         }
 
-        /* personalized message */
+        /* Glowing text */
+        .glow-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #c9792e, #e8a735, #f3bc5c, #d48d2b);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientShift 3s ease infinite;
+            display: inline-block;
+            margin: 5px 0;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Message box - compact */
         .message-box {
-            background: #fff5e6;
-            border-radius: 48px;
-            padding: 18px 16px;
-            margin: 1px 0 1px;
-            border: 2px dashed #f7b05e;
-            transition: all 0.2s;
+            background: linear-gradient(120deg, #fff8ed, #fff4e4);
+            border-radius: 32px;
+            padding: 12px 14px;
+            margin: 12px 0;
+            border: 2px solid #f7c56e;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .message-box p {
-            font-size: 1.35rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            color: #3b2a1f;
-            line-height: 1.4;
+            color: #3a2c1c;
+            line-height: 1.45;
         }
 
         .heartbeat {
-            color: #e63946;
-            font-size: 1.9rem;
+            color: #e67e22;
+            font-size: 1.1rem;
             display: inline-block;
-            animation: heartbeat 1.1s infinite;
-            margin: 0 4px;
+            animation: heartbeat 1.2s infinite;
+            margin: 0 2px;
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1);}
-            25% { transform: scale(1.25);}
-            35% { transform: scale(1.1);}
-            50% { transform: scale(1.3);}
+            0%, 100% { transform: scale(1); }
+            30% { transform: scale(1.2); }
+            50% { transform: scale(1.15); }
         }
 
-        /* floating buttons or interactive toggles */
+        /* Buttons - mobile friendly */
         .action-buttons {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
-            margin: 22px 0 12px;
+            margin: 12px 0 10px;
             flex-wrap: wrap;
         }
 
         .btn {
-            background: #f5cda0;
+            background: #f5d396;
             border: none;
-            padding: 10px 24px;
-            border-radius: 60px;
+            padding: 9px 20px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.8rem;
             font-family: inherit;
             color: #3b2a1f;
             cursor: pointer;
-            box-shadow: 0 4px 0 #a2572c;
-            transition: 0.08s linear;
+            box-shadow: 0 3px 0 #b26b2e;
+            transition: 0.05s linear;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #a2572c;
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #b26b2e;
         }
 
         .btn-special {
-            background: #ff8c69;
+            background: #f39c12;
             color: white;
-            box-shadow: 0 4px 0 #b3411a;
+            box-shadow: 0 3px 0 #c46b1a;
         }
 
-        /* confetti canvas (hidden until triggered) */
         #confetti-canvas {
             position: fixed;
             top: 0;
@@ -227,41 +242,74 @@
             z-index: 999;
         }
 
-        /* message area for live love */
         .dynamic-note {
-            margin-top: 12px;
-            font-size: 0.9rem;
-            background: #f3e1c0;
+            margin-top: 8px;
+            font-size: 0.7rem;
+            background: #f5e5ce;
             display: inline-block;
-            padding: 6px 16px;
-            border-radius: 60px;
-            color: #5e3a1f;
+            padding: 5px 16px;
+            border-radius: 40px;
+            color: #7a4c1a;
             font-weight: 500;
         }
 
         footer {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             opacity: 0.7;
-            margin-top: 22px;
-            color: #7f6142;
+            margin-top: 12px;
+            color: #9b6e3e;
         }
 
-        @media (max-width: 480px) {
-            .creature { font-size: 2.8rem; }
-            .glow-text { font-size: 1.7rem; }
-            .message-box p { font-size: 1.1rem; }
-            .gipphy-card { border-radius: 56px; }
-        }
-
-        /* toggle extra animation effect */
         .spin-special {
-            animation: spinZoom 0.5s ease forwards;
+            animation: spinZoom 0.4s ease forwards;
         }
 
         @keyframes spinZoom {
-            0% { transform: rotate(0deg) scale(1);}
-            50% { transform: rotate(12deg) scale(1.1);}
-            100% { transform: rotate(0deg) scale(1);}
+            0% { transform: rotate(0deg) scale(1); }
+            40% { transform: rotate(5deg) scale(1.02); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        /* Small screen adjustments */
+        @media (max-width: 450px) {
+            .gipphy-inner {
+                padding: 10px 12px 14px;
+            }
+            .message-box p {
+                font-size: 0.78rem;
+            }
+            .glow-text {
+                font-size: 1.2rem;
+            }
+            .btn {
+                padding: 7px 16px;
+                font-size: 0.72rem;
+            }
+            .eid-img {
+                max-width: 240px;
+            }
+            .lantern {
+                font-size: 1.2rem;
+            }
+            .star {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .message-box p {
+                font-size: 0.72rem;
+            }
+            .btn {
+                padding: 6px 14px;
+                font-size: 0.68rem;
+            }
+            .eid-img {
+                max-width: 200px;
+            }
+            .gipphy-card {
+                border-radius: 35px;
+            }
         }
     </style>
 </head>
@@ -269,36 +317,44 @@
 
 <div class="gipphy-card" id="gipphyCard">
     <div class="gipphy-inner">
-        <!-- ANIMATED GIPPHY ZONE : joyful creatures + moving effects -->
-        
+        <!-- EID ANIMATED ZONE with beautiful illustration -->
+        <div class="gipphy-animation">
             <div class="animation-stage">
-               <img src="eid.gif" alt="" class="gipphy-animation"> 
-           
+            
+                <img class="eid-img" id="eidMainImage" 
+                     src="eid.gif"
+                     alt="Eid Mubarak">
+                
+                
+                
+                <div>
+                    <span class="glow-text">✨ EID MUBARAK ✨</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Heartfelt message for friends and family -->
+        <!-- Heartfelt Eid message -->
         <div class="message-box">
             <p>
-                <strong style="color:#d45a2b;">Eid Mubarak</strong> 
-                <span class="heartbeat">🌙✨</span><br>
-                May this beautiful occasion of Eid bring <span style="background:linear-gradient(45deg, rgb(57, 21, 25), rgb(255, 0, 43)); -webkit-background-clip:text; background-clip:text; color:transparent;"> happiness, peace, and endless blessings</span>!
-                <br> to you and your family. May Allah accept all your prayers, fasting, and good deeds during Ramadan.<br>
-                <span style="background:linear-gradient(45deg, rgb(188, 47, 37), rgb(63, 20, 27)); -webkit-background-clip:text; background-clip:text; color:transparent;"> Enjoy this special day with joy, love, and togetherness.</span>
-                <span class="heartbeat">🤍</span><br>
+                <strong style="color:#d45a2b; font-size: 1rem;">🌙 Eid Mubarak! 🌙</strong><br>
+                May this blessed occasion bring <span style="background:linear-gradient(45deg, #e67e22, #f1c40f); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:bold;">happiness, peace, and endless blessings</span> to you and your family.<br>
+                ✨ May Allah accept all your prayers and good deeds ✨<br>
+                <span style="color:#b85c1a;">💚 Enjoy this special day with joy & love 💚</span>
+                <span class="heartbeat">🌙</span>
             </p>
         </div>
 
-        <!-- Interactive controls to change mood / add more love -->
+        <!-- Interactive buttons -->
         <div class="action-buttons">
-            <button class="btn" id="extraSparkleBtn">🎇 EXTRA SPARKLE</button>
-            <button class="btn btn-special" id="loveBombBtn">💘 LOVE EXPLOSION</button>
+            <button class="btn" id="extraSparkleBtn">🎇 SPARKLE</button>
+            <button class="btn btn-special" id="loveBombBtn">💝 BLESSINGS</button>
         </div>
 
         <div class="dynamic-note" id="dynamicMessage">
-            💬 click any button → more magic!
+            💫 Tap for festive magic!
         </div>
         <footer>
-            ✨ ap kaa apna khass Ali ✨
+            ✨ Ap ka Apna Khass Ali ✨
         </footer>
     </div>
 </div>
@@ -307,7 +363,7 @@
 
 <script>
     (function() {
-        // ---------- CONFETTI ENGINE (light & fun) ----------
+        // Mobile-optimized confetti
         const canvas = document.getElementById('confetti-canvas');
         let ctx = canvas.getContext('2d');
         let width = window.innerWidth;
@@ -324,20 +380,19 @@
         }
         window.addEventListener('resize', () => {
             resizeCanvas();
-            if(confettiActive) drawConfettiLoop();
         });
 
         class ConfettiParticle {
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height - height * 0.2;
-                this.size = Math.random() * 8 + 4;
-                this.speedY = Math.random() * 5 + 3;
-                this.speedX = (Math.random() - 0.5) * 2.5;
-                this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+                this.size = Math.random() * 6 + 3;
+                this.speedY = Math.random() * 4 + 2.5;
+                this.speedX = (Math.random() - 0.5) * 2;
+                const colors = ['#F4D03F', '#F7DC6F', '#E67E22', '#D35400', '#2ECC71', '#F39C12', '#FF6B6B'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
                 this.rotation = Math.random() * 360;
-                this.rotSpeed = (Math.random() - 0.5) * 8;
-                this.decay = 0;
+                this.rotSpeed = (Math.random() - 0.5) * 7;
             }
             update() {
                 this.y += this.speedY;
@@ -358,11 +413,12 @@
             }
         }
 
-        function startConfetti(duration = 1800) {
+        function startConfetti(duration = 1300) {
             if (animationFrame) cancelAnimationFrame(animationFrame);
             confettiActive = true;
             particles = [];
-            for(let i=0; i<120; i++) {
+            let count = Math.min(80, Math.floor(width / 6) + 40);
+            for(let i=0; i<count; i++) {
                 particles.push(new ConfettiParticle());
             }
             function drawLoop() {
@@ -387,189 +443,172 @@
             }
             drawLoop();
             setTimeout(() => {
-                if(particles.length > 0) {
-                    // gradual stop: let particles naturally die, but we don't add more.
-                    // just set flag that no more injection needed, but existing continue until end.
-                    // (confettiActive not fully kills, but stops new bursts)
-                }
+                if(particles.length > 0) {}
             }, duration);
-            // additional guarantee to clear after 2.5 seconds total 
             setTimeout(() => {
                 if(particles.length > 0 && !confettiActive) {
-                    // if particles left but no longer active, we cancel after clear
-                    for(let i=0;i<particles.length;i++) particles = [];
+                    particles = [];
                     if(animationFrame) cancelAnimationFrame(animationFrame);
                     ctx.clearRect(0, 0, width, height);
                 }
-            }, duration+800);
+            }, duration+500);
         }
 
-        // Enhanced quick confetti burst with extra love
-        function burstLoveConfetti() {
-            startConfetti(1500);
-            // also add a playful card shake
+        // Blessings burst
+        function burstBlessings() {
+            startConfetti(1400);
             const card = document.getElementById('gipphyCard');
-            card.style.transform = 'scale(1.02)';
-            setTimeout(() => { card.style.transform = ''; }, 200);
-            // update dynamic message
+            card.style.transform = 'scale(1.01)';
+            setTimeout(() => { card.style.transform = ''; }, 150);
             const msgDiv = document.getElementById('dynamicMessage');
-            msgDiv.innerHTML = '💖💖 LOVE EXPLOSION! You are the best! 💖💖';
+            msgDiv.innerHTML = '🌙✨ EID BLESSINGS! May joy be with you! ✨🌙';
+            const img = document.getElementById('eidMainImage');
+            img.style.filter = 'drop-shadow(0 0 10px gold)';
+            setTimeout(() => { img.style.filter = ''; }, 600);
             setTimeout(() => {
-                if(msgDiv.innerHTML.includes('LOVE EXPLOSION')) 
-                    msgDiv.innerHTML = '🌈 spreading happiness — forever gipphy family! 🌈';
-            }, 1800);
+                if(msgDiv.innerHTML.includes('BLESSINGS')) 
+                    msgDiv.innerHTML = '🌸 Taqabbalallahu minna wa minkum! 🌸';
+            }, 2000);
         }
 
-        // extra sparkle: change creature colors effect + flash + star rain
+        // Sparkle effect
         function extraSparkleEffect() {
-            // 1. flash animation on gipphy animation zone
             const zone = document.querySelector('.gipphy-animation');
-            zone.style.transition = '0.1s';
-            zone.style.backgroundColor = '#fff0d8';
-            zone.style.boxShadow = '0 0 0 3px gold, 0 0 0 8px #ffbc6e';
+            zone.style.transition = '0.12s';
+            zone.style.backgroundColor = '#fff3e0';
+            zone.style.boxShadow = '0 0 0 3px #ffdd99, 0 0 0 8px #f5bc70';
             setTimeout(() => {
-                zone.style.backgroundColor = '#ffe9cf';
-                zone.style.boxShadow = 'inset 0 2px 6px rgba(97, 52, 14, 0.1), 0 12px 18px -8px rgba(0,0,0,0.2)';
-            }, 300);
+                zone.style.backgroundColor = '#fef5e6';
+                zone.style.boxShadow = 'inset 0 1px 5px rgba(97, 52, 14, 0.08), 0 10px 20px -8px rgba(0,0,0,0.2)';
+            }, 280);
             
-            // 2. make all creatures do a spin class temporarily
-            const creatures = document.querySelectorAll('.creature');
-            creatures.forEach(cre => {
-                cre.style.animation = 'none';
-                cre.offsetHeight; // reflow
-                cre.style.animation = 'bounceWave 0.5s infinite alternate, spinZoom 0.4s ease';
+            const stars = document.querySelectorAll('.star');
+            stars.forEach(star => {
+                star.style.animation = 'none';
+                star.offsetHeight;
+                star.style.animation = 'twinkleGold 0.4s infinite alternate';
                 setTimeout(() => {
-                    cre.style.animation = 'bounceWave 1.2s infinite alternate';
+                    star.style.animation = 'twinkleGold 0.9s infinite alternate';
                 }, 500);
             });
-            // 3. add tiny random stars floating (via message)
+            
             const msgDiv = document.getElementById('dynamicMessage');
-            msgDiv.innerHTML = '✨🎉 SPARKLE MODE ON! You shine brighter than stars 🎉✨';
-            // also add few confetti particles but not overkill
-            startConfetti(900);
-            // extra emoji rain effect (just for fun: create floating span, removed quickly)
+            msgDiv.innerHTML = '✨🎉 SPARKLING EID MAGIC! 🎉✨';
+            startConfetti(800);
+            
+            // Light falling stars
             for(let i=0;i<12;i++) {
                 const starSpan = document.createElement('div');
-                starSpan.innerText = ['✨','⭐','🌟','💫','⚡','🌸'][Math.floor(Math.random()*6)];
+                starSpan.innerText = ['✨','⭐','🌟','🌙','💫'][Math.floor(Math.random()*5)];
                 starSpan.style.position = 'fixed';
                 starSpan.style.left = Math.random() * window.innerWidth + 'px';
-                starSpan.style.top = '-20px';
-                starSpan.style.fontSize = (Math.random() * 28 + 18) + 'px';
+                starSpan.style.top = '-25px';
+                starSpan.style.fontSize = (Math.random() * 18 + 12) + 'px';
                 starSpan.style.pointerEvents = 'none';
                 starSpan.style.zIndex = '1000';
-                starSpan.style.opacity = '0.9';
-                starSpan.style.transition = 'transform 1.2s linear, opacity 1s';
+                starSpan.style.opacity = '0.85';
                 document.body.appendChild(starSpan);
-                let fall = 0;
                 const interval = setInterval(() => {
                     if(!starSpan.parentNode) return clearInterval(interval);
                     let currentTop = parseFloat(starSpan.style.top);
-                    if(currentTop > window.innerHeight + 50) {
+                    if(currentTop > window.innerHeight + 40) {
                         starSpan.remove();
                         clearInterval(interval);
                     } else {
-                        starSpan.style.top = (currentTop + 5) + 'px';
-                        starSpan.style.transform = `rotate(${Math.random() * 30}deg)`;
+                        starSpan.style.top = (currentTop + 4.5) + 'px';
                     }
                 }, 35);
                 setTimeout(() => {
                     if(starSpan.parentNode) starSpan.remove();
                     clearInterval(interval);
-                }, 2800);
+                }, 2000);
             }
             setTimeout(() => {
-                if(msgDiv.innerHTML.includes('SPARKLE MODE'))
-                    msgDiv.innerHTML = '💕 infinite smiles for family & friends 💕';
-            }, 2200);
+                if(msgDiv.innerHTML.includes('SPARKLING'))
+                    msgDiv.innerHTML = '🕌 May your Eid be bright & joyful 🕌';
+            }, 2000);
         }
 
-        // attach interactive events
+        // Button events
         const sparkleBtn = document.getElementById('extraSparkleBtn');
         const loveBtn = document.getElementById('loveBombBtn');
         
         sparkleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             extraSparkleEffect();
-            // also wiggle card
             const cardDiv = document.getElementById('gipphyCard');
             cardDiv.classList.add('spin-special');
-            setTimeout(() => cardDiv.classList.remove('spin-special'), 500);
+            setTimeout(() => cardDiv.classList.remove('spin-special'), 400);
         });
         
         loveBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            burstLoveConfetti();
-            // also change heart in message to big animated pulse
+            burstBlessings();
             const heartSpan = document.querySelector('.heartbeat');
             if(heartSpan) {
-                heartSpan.style.transform = 'scale(1.8)';
-                setTimeout(() => { heartSpan.style.transform = ''; }, 400);
+                heartSpan.style.transform = 'scale(1.5)';
+                setTimeout(() => { heartSpan.style.transform = ''; }, 350);
             }
-            const msgBox = document.querySelector('.message-box p');
-            const originalMsg = msgBox.innerHTML;
-            msgBox.style.transition = '0.2s';
-            msgBox.style.backgroundColor = '#fff2e1';
-            setTimeout(() => { msgBox.style.backgroundColor = ''; }, 300);
-            // add a sweet temporary overlay effect
             const tempNote = document.getElementById('dynamicMessage');
-            tempNote.innerHTML = '💞💞 YOU ARE SO LOVED! FAMILY FOREVER 💞💞';
+            tempNote.innerHTML = '💚💛 EID MUBARAK! Love & peace to all! 💛💚';
             setTimeout(() => {
-                if(tempNote.innerHTML.includes('LOVED')) 
-                    tempNote.innerHTML = '🎁 every moment with you is a gipphy treasure 🎁';
+                if(tempNote.innerHTML.includes('MUBARAK')) 
+                    tempNote.innerHTML = '🎁 Celebrate with loved ones! 🎁';
             }, 2000);
         });
         
-        // extra fun: double-click card triggers sparkle too
+        // Double tap on card
         const cardContainer = document.getElementById('gipphyCard');
         cardContainer.addEventListener('dblclick', () => {
             extraSparkleEffect();
-            startConfetti(1000);
+            startConfetti(900);
             const dynMsg = document.getElementById('dynamicMessage');
-            dynMsg.innerHTML = '🌸✨ DOUBLE TAP LOVE! FAMILY & FRIENDS ROCK! ✨🌸';
+            dynMsg.innerHTML = '🌙✨ DOUBLE TAP! EID MUBARAK! ✨🌙';
             setTimeout(() => {
                 if(dynMsg.innerHTML.includes('DOUBLE TAP'))
-                    dynMsg.innerHTML = '🎈 keep dancing, keep smiling 🎈';
-            }, 2000);
+                    dynMsg.innerHTML = '🎈 Share love & joy today! 🎈';
+            }, 1800);
         });
         
-        // also hover effect on card to show playful border
-        cardContainer.addEventListener('mouseenter', () => {
-            cardContainer.style.boxShadow = '0 30px 50px rgba(0,0,0,0.3), 0 0 0 8px #ffd966, 0 0 0 14px #f7b05e';
+        // Touch-friendly effects
+        cardContainer.addEventListener('touchstart', () => {
+            cardContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.35), 0 0 0 5px #ffde9e, 0 0 0 10px #f5bc70';
         });
-        cardContainer.addEventListener('mouseleave', () => {
-            cardContainer.style.boxShadow = '0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(255, 215, 150, 0.5), 0 0 0 12px #f7b05e';
+        cardContainer.addEventListener('touchend', () => {
+            cardContainer.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3), 0 0 0 5px #f9d56e, 0 0 0 10px #e8b86b';
         });
         
-        // resize canvas on load
+        // Image click sparkle
+        const eidImg = document.getElementById('eidMainImage');
+        eidImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            startConfetti(500);
+            const dynMsg = document.getElementById('dynamicMessage');
+            dynMsg.innerHTML = '🏮🌙 Eid blessing to you! 🌙🏮';
+            setTimeout(() => {
+                if(dynMsg.innerHTML.includes('blessing')) dynMsg.innerHTML = '💝 Enjoy your special day! 💝';
+            }, 1200);
+        });
+        
         resizeCanvas();
         
-        // initial message rotation: cycle message after 4 sec just for fun
+        // Rotating messages
         let msgIndex = 0;
-        const funMessages = [
-            "💬 click any button → more magic!",
-            "🐣 you + me = best gipphy crew 🐣",
-            "🎵 endless happy dancing animals 🎵",
-            "🍬 share this joy with loved ones 🍬"
+        const mobileMessages = [
+            "💫 Tap for festive magic!",
+            "🌙✨ Eid Mubarak! ✨🌙",
+            "🕌 Share love & joy 🕌",
+            "⭐ Blessed celebration ⭐"
         ];
         setInterval(() => {
             const msgDivDynamic = document.getElementById('dynamicMessage');
-            if(msgDivDynamic && !msgDivDynamic.innerHTML.includes('LOVE') && !msgDivDynamic.innerHTML.includes('SPARKLE') && !msgDivDynamic.innerHTML.includes('DOUBLE')) {
-                msgIndex = (msgIndex + 1) % funMessages.length;
-                msgDivDynamic.innerHTML = funMessages[msgIndex];
-            } else {
-                // if a special effect message is present, don't override immediately, but after 3 sec of any effect it might reset
-                if(msgDivDynamic.innerHTML.includes('LOVE') || msgDivDynamic.innerHTML.includes('SPARKLE') || msgDivDynamic.innerHTML.includes('DOUBLE')) {
-                    setTimeout(() => {
-                        if(msgDivDynamic.innerHTML.includes('LOVE') || msgDivDynamic.innerHTML.includes('SPARKLE')) {
-                            // but only reset if it's been a while (we use a soft reset after effect timers)
-                        }
-                    }, 2000);
-                }
+            if(msgDivDynamic && !msgDivDynamic.innerHTML.includes('BLESSINGS') && !msgDivDynamic.innerHTML.includes('SPARKLING') && !msgDivDynamic.innerHTML.includes('DOUBLE TAP') && !msgDivDynamic.innerHTML.includes('MUBARAK')) {
+                msgIndex = (msgIndex + 1) % mobileMessages.length;
+                msgDivDynamic.innerHTML = mobileMessages[msgIndex];
             }
-        }, 4800);
+        }, 4500);
         
-        // make it responsive: extra css friendliness
-        console.log("✨ Gipphy ready! spread love to friends & family ✨");
+        console.log("✨ Eid Mobile Card Ready! Share with family ✨");
     })();
 </script>
 </body>
